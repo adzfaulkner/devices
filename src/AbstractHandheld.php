@@ -16,13 +16,21 @@ abstract class AbstractHandheld {
     protected $colour;
     
     /**
+     *
+     * @var int
+     */
+    protected $capacity;
+    
+    /**
      * 
      * @param AbstractScreen $screen
      * @param colour $colour
+     * @param capacity $capacity
     */
-    public function __construct(AbstractScreen $screen, $colour) {
+    public function __construct(AbstractScreen $screen, $colour, $capacity) {
         $this->setScreen($screen);
         $this->setColour($colour);
+        $this->setCapacity($capacity);
     }
     
     /**
@@ -55,6 +63,22 @@ abstract class AbstractHandheld {
      */
     public function setColour($colour) {
         $this->colour = $colour;
+    }
+    
+    /**
+     * 
+     * @return int
+     */
+    public function getCapacity() {
+        return (int)$this->capacity;
+    }
+    
+    /**
+     * 
+     * @param sint $capacity
+     */
+    public function setCapacity($capacity) {
+        $this->capacity = (int)$capacity;
     }
 }
 

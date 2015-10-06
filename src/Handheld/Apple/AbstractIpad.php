@@ -2,6 +2,6 @@
 namespace Arjf\Devices\Handheld\Apple;
 use Arjf\Devices\Handheld\AbstractAppleHandheld;
 
-class Iphone extends AbstractAppleHandheld {
+abstract class AbstractIpad extends AbstractAppleHandheld {
     //put your code here
 }

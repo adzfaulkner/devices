@@ -3,6 +3,7 @@
     "description": "Basic device models",
     "license": "MIT",
     "keywords": ["devices"],
+    "time": "2015-10-03",
     "authors": [
         {
             "name": "Adam Faulkner",
