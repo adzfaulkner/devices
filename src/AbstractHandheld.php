@@ -22,15 +22,27 @@ abstract class AbstractHandheld {
     protected $capacity;
     
     /**
+     *
+     * @var float
+     */
+    protected $price;
+    
+    /**
      * 
      * @param AbstractScreen $screen
      * @param colour $colour
      * @param capacity $capacity
     */
-    public function __construct(AbstractScreen $screen, $colour, $capacity) {
+    public function __construct(
+        AbstractScreen $screen, 
+        $colour, 
+        $capacity, 
+        $price
+    ) {
         $this->setScreen($screen);
         $this->setColour($colour);
         $this->setCapacity($capacity);
+        $this->setPrice($price);
     }
     
     /**
@@ -79,6 +91,26 @@ abstract class AbstractHandheld {
      */
     public function setCapacity($capacity) {
         $this->capacity = (int)$capacity;
+    }
+    
+    /**
+     * 
+     * @return float
+     */
+    public function getPrice() {
+        return $this->price;
+    }
+
+    /**
+     * 
+     * @param float $price
+     */
+    public function setPrice($price) {
+        if (is_numeric($price) === false) {
+            throw new \InvalidArgumentException($price . ' is not a valid price');
+        }
+        
+        $this->price = (float)$price;
     }
 }
 
